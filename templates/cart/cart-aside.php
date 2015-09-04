@@ -32,6 +32,8 @@ global $woocommerce_side_cart;
 	
 	<hr />
 	
+	<?php do_action('woocommerce_before_side_cart'); ?>
+	
 	<form action="<?php echo WC()->cart->get_cart_url(); ?>" method="post" class="<?php echo apply_filters('woocommerce_side_cart_form_classes', 'cart'); ?>" id="basketForm">
 		
 		<?php wc_get_template('cart/cart-aside-items.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/'); ?>
@@ -53,5 +55,7 @@ global $woocommerce_side_cart;
 		<?php do_action('woocommerce_side_cart_after_submit_button'); ?>
 	
 	</form>
+	
+	<?php do_action('woocommerce_after_side_cart'); ?>
 		
 </aside>
