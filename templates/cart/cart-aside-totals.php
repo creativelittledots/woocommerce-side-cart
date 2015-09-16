@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	<div class="small-4 columns text-right">
 		
-		<h5><?php echo WC()->cart->get_total_ex_tax(); ?></h5>
+		<h5><?php wc_cart_totals_subtotal_html(); ?></h5>
 		
 		<small>Excl. Tax</small>
 		
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	<div class="small-4 columns text-right">
 		
-		<h5><?php echo WC()->cart->get_total(); ?></h5>
+		<h5><?php wc_cart_totals_order_total_html(); ?></h5>
 		
 		<small>Incl. Tax</small>
 		
