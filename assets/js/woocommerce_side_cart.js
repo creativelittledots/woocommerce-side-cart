@@ -1,15 +1,25 @@
 jQuery( function( $ ) {
-
-	// wc_add_to_cart_params is required to continue, ensure the object exists
-	if ( typeof wc_add_to_cart_params === 'undefined' )
-		return false;	
 		
 	$.blockUI.defaults.overlayCSS.cursor = 'default';
 	
-	$(document).on("change", "form#basketForm input.qty", function(e, button) {
+	$(document).on("change", ".js-change-side-cart-qty", function(e, button) {
+		
+		// wc_add_to_cart_params is required to continue, ensure the object exists
+		if ( typeof wc_add_to_cart_params === 'undefined' )
+			return false;	
+			
+		doTransition();
 		
 		$input = $(this);
-	    
+		
+		var item = $input.parents('.item').block({
+			message: null,
+			overlayCSS: {
+				background: '#fff',
+				opacity: 0.6
+			}
+		});
+
 	    var data = {
 			action: 'change_cart_item_quantity',
 		};
@@ -18,7 +28,7 @@ jQuery( function( $ ) {
 			data[key] = value;
 		});
 		
-		data.quantity = $(this).val();
+		data.quantity = $input.val();
 	    
 	    // Trigger event
 	    $( 'body' ).trigger( 'adding_to_cart', [ data, $input ] );
@@ -97,54 +107,6 @@ jQuery( function( $ ) {
 			
 		});
 	   
-	});
-	
-	$(document).on("click", ".reduceBasketItemQtyBtn", function(e) {
-		
-		e.preventDefault();
-		
-		var item = $(this).parents('.item');
-		
-		item.block({
-			message: null,
-			overlayCSS: {
-				background: '#fff',
-				opacity: 0.6
-			}
-		});
-
-		var qty = parseInt($(this).closest('.basketItemControls').find('input.qty').val());
-		
-		qty--;
-		
-		$(this).closest('.basketItemControls').find('input.qty').val(qty).trigger('change', [$(this)]);
-		
-		doTransition();
-		
-	});
-	
-	$(document).on("click", ".increaseBasketItemQtyBtn", function(e) {
-		
-		e.preventDefault();
-		
-		var item = $(this).parents('.item');
-		
-		item.block({
-			message: null,
-			overlayCSS: {
-				background: '#fff',
-				opacity: 0.6
-			}
-		});
-		
-		var qty = parseInt($(this).closest('.basketItemControls').find('input.qty').val());
-		
-		qty++;
-		
-		$(this).closest('.basketItemControls').find('input.qty').val(qty).trigger('change', [$(this)]);
-		
-		doTransition();
-		
 	});
 	
 	$(document).on("click", ".removeBasketItem", function(e) {

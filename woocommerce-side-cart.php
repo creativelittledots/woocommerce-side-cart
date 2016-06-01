@@ -38,8 +38,6 @@ class WC_Side_Cart {
 	
 	public $version 	= '1.0.0';
 	
-	public $appendedToMenu = false;
-	
 	public function __construct() {
 		
 		add_action( 'init', array( $this, 'init' ) );
@@ -51,9 +49,6 @@ class WC_Side_Cart {
 		
 		// Enqueue Styles
 		add_action( 'wp_enqueue_scripts', array($this, 'woocommerce_side_cart_styles') );
-		
-		// Add Basket Button to Current Menu
-		add_filter( 'wp_nav_menu_items', array($this, 'woocommerce_side_cart_menu_item'), 10, 2 );
 		
 		// Add Side Menu to Action
 		add_action( 'woocommerce_side_cart', array($this, 'woocommerce_add_side_cart_menu') );
@@ -155,30 +150,15 @@ class WC_Side_Cart {
 		
 	}
 	
-	public function woocommerce_side_cart_menu_item( $items, $args ) {
-		
-		if($this->appendedToMenu)
-			return $items;
-		
-		$cart_contents_count = apply_filters('woocommerce_side_cart_contents_count', WC()->cart->cart_contents_count);
-		
-		$menu_item_text = apply_filters('woocommerce_side_cart_menu_item_text', 'View Basket');
-		
-		$icon = apply_filters('woocommerce_side_cart_menu_icon', '<a href="#" class="basketBtn hide-for-medium-down"><span>'.$cart_contents_count.'</span>' . $menu_item_text . '</a>');
-	
-	    $items .= apply_filters('woocommerce_side_cart_menu_item', '<li id="sideCartMenuBtn">' . $icon . '</li>', $items, $args);
-	    
-	    $this->appendedToMenu = true;
-	    
-	    return $items;
-	    
-	}
-	
 	public function woocommerce_add_side_cart_menu() {
 		
 		global $woocommerce_side_cart;
+		
+		echo '<aside id="basket" class="woocommerce">';
 	
 		wc_get_template('cart/cart-aside.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
+		
+		echo '</aside>';
 		
 	}
 	
@@ -242,23 +222,13 @@ class WC_Side_Cart {
 		    
 	    ob_start();
 	    
-	    wc_get_template('cart/cart-aside-items.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
+	    wc_get_template('cart/cart-aside.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
 	    
 	    $html = ob_get_contents();
 	    
 	    ob_end_clean();
 	    
-	    $fragments['#basket #basketItems'] = $html;
-	    
-	    ob_start();
-	    
-	    wc_get_template('cart/cart-aside-totals.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
-	    
-	    $html = ob_get_contents();
-	    
-	    ob_end_clean();
-	    
-	    $fragments['#basket #basketTotals'] = $html;
+	    $fragments['#basketContainer'] = $html;
 	
 	    return $fragments;
 		
