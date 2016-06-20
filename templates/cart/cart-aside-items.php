@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  
 ?>
 
-<div class="items" id="basketItems">
+<div class="items js-side-cart-items">
 		
 	<?php foreach(WC()->cart->get_cart() as $cart_item_key => $cart_item) : 
 		

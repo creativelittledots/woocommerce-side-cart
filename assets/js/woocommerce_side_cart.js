@@ -2,7 +2,7 @@ jQuery( function( $ ) {
 		
 	$.blockUI.defaults.overlayCSS.cursor = 'default';
 	
-	$(document).on("change", ".js-change-side-cart-qty", function(e, button) {
+	$(document).on("change", ".js-side-cart-change-qty", function(e, button) {
 		
 		// wc_add_to_cart_params is required to continue, ensure the object exists
 		if ( typeof wc_add_to_cart_params === 'undefined' )

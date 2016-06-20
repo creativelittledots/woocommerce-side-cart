@@ -15,11 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div class="row collapse total" id="basketTotals">
+<div class="row collapse js-side-cart-totals total">
 			
 	<div class="small-4 columns">
 		
-		<h5>Subtotal</h5>
+		<h5><?php _e('Subtotal', 'woocommerce') ;?></h5>
 		
 	</div>
 	
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		<h5><?php wc_cart_totals_subtotal_html(); ?></h5>
 		
-		<small>Excl. Tax</small>
+		<small><?php _e('Excl. Tax') ;?><</small>
 		
 	</div>
 	
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		<h5><?php wc_cart_totals_order_total_html(); ?></h5>
 		
-		<small>Incl. Tax</small>
+		<small><?php _e('Incl. Tax') ;?><</small>
 		
 	</div>
 	
