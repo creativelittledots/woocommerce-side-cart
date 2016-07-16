@@ -15,11 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<ul class="inline-list basketItemControls">
+<ul class="inline-list js-side-cart-item-controls">
 			
 	<li>
 	
-		<input type="number" step="1" min="0" name="cart[<?php echo $cart_item_key; ?>][qty]" value="<?php echo $cart_item['quantity']; ?>" title="Qty" class="input-text qty js-change-side-cart-qty text" size="4" data-product_id="<?php echo esc_attr( $product->id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" data-cart_item_key="<?php echo $cart_item_key; ?>" />
+		<input type="number" step="1" min="0" name="cart[<?php echo $cart_item_key; ?>][qty]" value="<?php echo $cart_item['quantity']; ?>" title="Qty" class="input-text qty js-side-cart-change-qty text" size="4" data-product_id="<?php echo esc_attr( $product->id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" data-cart_item_key="<?php echo $cart_item_key; ?>" />
 	
 	</li>
 	
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		</h5>
 		
-		<small>Excl Tax</small>
+		<small><?php _e('Excl Tax'); ?></small>
 		
 	</li>
 	

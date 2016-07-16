@@ -50,9 +50,6 @@ class WC_Side_Cart {
 		// Enqueue Styles
 		add_action( 'wp_enqueue_scripts', array($this, 'woocommerce_side_cart_styles') );
 		
-		// Add Side Menu to Action
-		add_action( 'woocommerce_side_cart', array($this, 'woocommerce_add_side_cart_menu') );
-		
 		// Backfall to default cart item filter
 		add_filter( 'woocommerce_side_cart_item_product', array($this, 'woocommerce_side_cart_item_product'), 10, 3);
 		add_filter( 'woocommerce_side_cart_item_name', array($this, 'woocommerce_side_cart_item_name'), 10, 3);
@@ -70,6 +67,10 @@ class WC_Side_Cart {
 		// Ajax
 		add_action( 'wp_ajax_change_cart_item_quantity' , array($this, 'change_cart_item_qty') );
 		add_action( 'wp_ajax_nopriv_change_cart_item_quantity' , array($this, 'change_cart_item_qty') );
+		
+		// Add Side Menu to Action
+		add_action( 'wp_footer', array($this, 'woocommerce_side_cart') );
+		add_action( 'woocommerce_before_side_cart', array($this, 'woocommerce_side_cart_open') );
 				
 	}
 	
@@ -150,16 +151,20 @@ class WC_Side_Cart {
 		
 	}
 	
-	public function woocommerce_add_side_cart_menu() {
+	public function woocommerce_side_cart() {
 		
 		global $woocommerce_side_cart;
-		
-		echo '<aside id="basket" class="woocommerce">';
 	
 		wc_get_template('cart/cart-aside.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
 		
-		echo '</aside>';
-		
+	}
+	
+	public function woocommerce_side_cart_open() {
+    	
+    	global $woocommerce_side_cart;
+	
+		wc_get_template('cart/cart-aside-open.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
+    	
 	}
 	
 	public function woocommerce_side_cart_item_product($_product, $cart_item, $cart_item_key) {
@@ -218,17 +223,9 @@ class WC_Side_Cart {
 		
 		global $woocommerce_side_cart;
 		
-		$fragments['.basketBtn span'] = '<span>' . apply_filters('woocommerce_side_cart_contents_count', WC()->cart->cart_contents_count) . '</span>';
-		    
-	    ob_start();
+		$fragments['.js-side-cart-open'] = wc_get_template_html('cart/cart-aside-open.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
 	    
-	    wc_get_template('cart/cart-aside.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
-	    
-	    $html = ob_get_contents();
-	    
-	    ob_end_clean();
-	    
-	    $fragments['#basketContainer'] = $html;
+	    $fragments['.side-cart-container'] = wc_get_template_html('cart/cart-aside.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
 	
 	    return $fragments;
 		
