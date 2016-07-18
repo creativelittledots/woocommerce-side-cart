@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					| 
 					
-					<a href="<?php echo wp_nonce_url( add_query_arg( 'remove_item', $cart_item_key ), 'woocommerce-cart' ); ?>" class="remove removeBasketItem" title="<?php echo __('Remove this item', 'woocommerce-side-cart'); ?>">Remove</a>
+					<a href="<?php echo wp_nonce_url( add_query_arg( 'remove_item', $cart_item_key ), 'woocommerce-cart' ); ?>" class="remove js-remove-basket-item" title="<?php echo __('Remove this item', 'woocommerce-side-cart'); ?>">Remove</a>
 					
 				</h5>
 				
