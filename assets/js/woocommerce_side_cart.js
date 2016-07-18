@@ -2,6 +2,7 @@ jQuery( document ).ready(function( $ ) {
 		
 	$.blockUI.defaults.overlayCSS.cursor = 'default';
 	
+<<<<<<< HEAD
 	var delay = (function(){
       var timer = 0;
       return function(callback, ms){
@@ -15,6 +16,43 @@ jQuery( document ).ready(function( $ ) {
     	$input = $(this);
     	
     	delay( function() {
+=======
+	$(document).on("change", ".js-side-cart-change-qty", function(e, button) {
+		
+		// wc_add_to_cart_params is required to continue, ensure the object exists
+		if ( typeof wc_add_to_cart_params === 'undefined' )
+			return false;	
+			
+		doTransition();
+		
+		$input = $(this);
+		
+		var item = $input.parents('.item').block({
+			message: null,
+			overlayCSS: {
+				background: '#fff',
+				opacity: 0.6
+			}
+		});
+
+	    var data = {
+			action: 'change_cart_item_quantity',
+		};
+
+		$.each( $(this).data(), function( key, value ) {
+			data[key] = value;
+		});
+		
+		data.quantity = $input.val();
+	    
+	    // Trigger event
+	    $( 'body' ).trigger( 'adding_to_cart', [ data, $input ] );
+	    
+		$( 'body' ).trigger( 'changing_cart_item_qty', [ data, $input ] );
+
+		// Ajax action
+		$.post( wc_add_to_cart_params.ajax_url, data, function( response ) {
+>>>>>>> master
 
     		// wc_add_to_cart_params is required to continue, ensure the object exists
     		if ( typeof wc_add_to_cart_params === 'undefined' )
