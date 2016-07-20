@@ -172,9 +172,12 @@ body.side-cart-open {
     margin: 0; }
   .side-cart .side-cart-footer {
     position: absolute;
-    bottom: 0; }
+    bottom: 0; 
+    width: 99.5%; }
   .side-cart .side-cart-totals {
     background: white; }
+  .side-cart .side-cart-totals .button {
+    margin: 0; }
   .side-cart .cart-empty, .side-cart .return-to-shop {
     text-align: center; }
 

@@ -266,10 +266,15 @@ body.side-cart-open {
 	.side-cart-footer {
     	position: absolute;
     	bottom: 0;
+    	width: 99.5%;
 	}
 	
 	.side-cart-totals {
 		background: white;
+		
+		.button {
+			margin: 0
+		}
 	}
 	
 	.cart-empty, .return-to-shop {
