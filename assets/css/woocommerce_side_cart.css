@@ -121,7 +121,7 @@ body.side-cart-open {
     overflow: auto;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
-    height: 100%; }
+    height: calc(100vh - 320px); }
     .side-cart .items::-webkit-scrollbar {
       width: 0 !important; }
   .side-cart .item {
@@ -171,8 +171,7 @@ body.side-cart-open {
     width: 99.5%;
     margin: 0; }
   .side-cart .side-cart-footer {
-    position: absolute;
-    bottom: 0; 
+    position: relative;
     width: 99.5%; }
   .side-cart .side-cart-totals {
     background: white; }
