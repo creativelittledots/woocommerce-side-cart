@@ -113,6 +113,10 @@ jQuery( document ).ready(function( $ ) {
     				
     			}
     			
+            }).always(function() {
+	            
+	            $input.parents('.item').unblock();
+	            
             });
 			
         }, 1000 );
