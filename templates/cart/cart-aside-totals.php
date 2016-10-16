@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div class="side-cart-totals">
+<div class="side-cart__totals">
 
 	<?php wc_get_template( 'cart/cart-totals.php' ); ?>
 

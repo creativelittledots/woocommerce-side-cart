@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  
 ?>
 
-<a href="<?php WC()->cart->get_cart_url(); ?>" class="js-side-cart-open side-cart-icon">
+<a href="<?php WC()->cart->get_cart_url(); ?>" class="js-side-cart-icon js-side-cart-open side-cart__icon side-cart__icon--outer">
     
-    <span><?php echo WC()->cart->cart_contents_count; ?></span>
+    <span class="side-cart__number js-side-cart-number"><?php echo WC()->cart->cart_contents_count; ?></span>
     
 </a>

@@ -15,25 +15,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<ul class="inline-list js-side-cart-item-controls">
+<ul class="side-cart__controls js-side-cart-item-controls">
 			
-	<li>
+	<li class="side-cart__control_item">
 	
-		<input type="number" step="1" min="0" name="cart[<?php echo $cart_item_key; ?>][qty]" value="<?php echo $cart_item['quantity']; ?>" title="Qty" class="input-text qty js-side-cart-change-qty text" size="4" data-product_id="<?php echo esc_attr( $product->id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" data-cart_item_key="<?php echo $cart_item_key; ?>" />
+		<input type="number" step="1" min="0" name="cart[<?php echo $cart_item_key; ?>][qty]" value="<?php echo $cart_item['quantity']; ?>" title="Qty" class="input-text qty js-side-cart-change-qty text side-cart__qty" size="4" data-product_id="<?php echo esc_attr( $product->id ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" data-cart_item_key="<?php echo $cart_item_key; ?>" />
 	
 	</li>
 	
-	<li class="inline">
+	<li class="side-cart__control_item">
 	
 		&times; 
 		
-		<h5>
+	</li>
+	
+	<li class="side-cart__control_item">
 		
-			<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
+		<strong>
 		
-		</h5>
+			<?php echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $product ), $cart_item, $cart_item_key ); ?>
 		
-		<small><?php _e('Excl Tax'); ?></small>
+		</strong>
 		
 	</li>
 	

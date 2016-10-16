@@ -22,23 +22,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if( ! function_exists('is_woocommerce_active') ) {
-	return;
-}
-
-// Check if WooCommerce is active
-if ( ! is_woocommerce_active() ) {
-	
-	return;
-	
-}
-
 
 class WC_Side_Cart {
 	
 	public $version 	= '1.0.0';
 	
 	public function __construct() {
+		
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		
+		// Check if WooCommerce is active
+		if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+			
+			return;
+			
+		}
 		
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'admin_init', array( $this, 'activate' ) );
@@ -112,6 +110,18 @@ class WC_Side_Cart {
 	
 	public function woocommerce_side_cart_scripts() {
 		
+		if( is_cart() && ! apply_filters( 'wc_side_cart_display_on_cart', false ) ) {
+			
+			return;
+			
+		}
+		
+		if( is_checkout() && ! apply_filters( 'wc_side_cart_display_on_checkout', false ) ) {
+			
+			return;
+			
+		}
+		
 		global $woocommerce_side_cart;
 		
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
@@ -130,6 +140,18 @@ class WC_Side_Cart {
 	}
 	
 	public function woocommerce_side_cart_styles() {
+		
+		if( is_cart() && ! apply_filters( 'wc_side_cart_display_on_cart', false ) ) {
+			
+			return;
+			
+		}
+		
+		if( is_checkout() && ! apply_filters( 'wc_side_cart_display_on_checkout', false ) ) {
+			
+			return;
+			
+		}
 		
 		global $woocommerce_side_cart;
 		
@@ -152,6 +174,18 @@ class WC_Side_Cart {
 	}
 	
 	public function woocommerce_side_cart() {
+		
+		if( is_cart() && ! apply_filters( 'wc_side_cart_display_on_cart', false ) ) {
+			
+			return;
+			
+		}
+		
+		if( is_checkout() && ! apply_filters( 'wc_side_cart_display_on_checkout', false ) ) {
+			
+			return;
+			
+		}
 		
 		global $woocommerce_side_cart;
 	
@@ -225,7 +259,7 @@ class WC_Side_Cart {
 		
 		$fragments['.js-side-cart-open'] = wc_get_template_html('cart/cart-aside-open.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
 	    
-	    $fragments['.side-cart-container'] = wc_get_template_html('cart/cart-aside.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
+	    $fragments['.js-side-cart-container'] = wc_get_template_html('cart/cart-aside.php', array(), false, $woocommerce_side_cart->plugin_path() . '/templates/');
 	
 	    return $fragments;
 		

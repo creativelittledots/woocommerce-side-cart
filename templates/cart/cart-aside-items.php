@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  
 ?>
 
-<div class="items js-side-cart-items">
+<div class="side-cart__items js-side-cart-items">
 		
 	<?php foreach(WC()->cart->get_cart() as $cart_item_key => $cart_item) : 
 		
@@ -26,9 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 		<?php if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) : ?>
 		
-			<div class="item">
+			<div class="item side-cart__item">
 				
-				<h5 class="itemName">
+				<h5 class="side-cart__item_name">
 					
 					<?php
 											
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					| 
 					
-					<a href="<?php echo wp_nonce_url( add_query_arg( 'remove_item', $cart_item_key ), 'woocommerce-cart' ); ?>" class="remove js-remove-basket-item" title="<?php echo __('Remove this item', 'woocommerce-side-cart'); ?>">Remove</a>
+					<a href="<?php echo wp_nonce_url( add_query_arg( 'remove_item', $cart_item_key ), 'woocommerce-cart' ); ?>" class="side-cart__remove_item js-remove-basket-item" title="<?php echo __('Remove this item', 'woocommerce-side-cart'); ?>">Remove</a>
 					
 				</h5>
 				
