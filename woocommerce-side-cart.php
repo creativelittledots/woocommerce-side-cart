@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: WooCommerce Side Cart
-* Description: Add a side menu to your theme to display and control cart items.
+* Description: Adds a hidden side cart, with toggle-able visibility via menu link, to your theme. Super light, powerful, and relies mostly on native Woocommerce functionality.
 * Version: 1.0.0
 * Author: Creative Little Dots
 * Author URI: http://creativelittledots.co.uk
