@@ -1,7 +1,4 @@
 /*----------------------------------------------*\
-	#COLOURS
-\*----------------------------------------------*/
-/*----------------------------------------------*\
 	#FONTS
 \*----------------------------------------------*/
 @font-face {
@@ -60,13 +57,13 @@ body.js-side-cart-opened {
       position: absolute;
       right: 0.375rem;
       top: 50%;
-      color: #d7d8d8;
+      color: gainsboro;
       content: 'a';
       margin-top: -1.25rem;
       font-size: 1.75rem; }
   .side-cart__number {
     border-radius: 50%;
-    background-color: #35c22b;
+    background-color: #a46497;
     color: white;
     font-size: 0.68rem;
     font-weight: 700;
@@ -87,8 +84,8 @@ body.js-side-cart-opened {
   .side-cart__iconic {
     text-align: center;
     padding: 1rem;
-    border-top: 2px solid #efefef;
-    border-bottom: 2px solid #efefef; }
+    border-top: 2px solid gainsboro;
+    border-bottom: 2px solid gainsboro; }
   .side-cart__top_title {
     display: inline-block;
     margin: 0.5rem 0; }
@@ -97,21 +94,21 @@ body.js-side-cart-opened {
     float: right;
     font-size: 2rem;
     margin-top: -.25rem;
-    color: #d7d8d8; }
+    color: gainsboro; }
   .side-cart__item {
     display: block;
     float: left;
     width: 100%;
     padding: 1rem; }
     .side-cart__item:nth-of-type(even) {
-      background: #f5f5f5; }
+      background: gainsboro; }
   .side-cart__item_name {
     margin: 0 0 1rem 0;
     font-weight: 400;
     font-size: 1rem; }
   .side-cart__container {
-    border-left: 2px solid #efefef;
-    border-right: 2px solid #efefef; }
+    border-left: 2px solid gainsboro;
+    border-right: 2px solid gainsboro; }
   .side-cart__items {
     overflow: auto;
     -ms-overflow-style: none;
@@ -152,7 +149,7 @@ body.js-side-cart-opened {
     height: 2rem;
     box-shadow: none;
     background: white;
-    border: 1px solid #ddd;
+    border: 1px solid gainsboro;
     padding: 0.25rem;
     max-width: 4rem; }
   .side-cart .cart-empty, .side-cart .return-to-shop {

@@ -1,13 +1,4 @@
 /*----------------------------------------------*\
-	#COLOURS
-\*----------------------------------------------*/
-
-$green: #35c22b;
-
-$grey1: #f5f5f5;
-$grey2: #d7d8d8;
-
-/*----------------------------------------------*\
 	#FONTS
 \*----------------------------------------------*/
 
@@ -83,7 +74,7 @@ body.js-side-cart-opened {
 			position: absolute;
 			right: 0.375rem;
 			top: 50%;
-			color: $grey2;
+			color: gainsboro;
 			content: 'a';
 			margin-top: -1.25rem;
 			font-size: 1.75rem;
@@ -93,7 +84,7 @@ body.js-side-cart-opened {
 	
 	&__number {
 		border-radius: 50%;
-		background-color: $green;
+		background-color: #a46497;
 		color: white;
 		font-size: 0.68rem;
 		font-weight: 700;
@@ -121,8 +112,8 @@ body.js-side-cart-opened {
 	&__iconic {
 		text-align: center;
 		padding: 1rem;
-		border-top: 2px solid #efefef;
-		border-bottom: 2px solid #efefef;
+		border-top: 2px solid gainsboro;
+		border-bottom: 2px solid gainsboro;
 	}
 	
 	&__top_title {
@@ -135,7 +126,7 @@ body.js-side-cart-opened {
 		float: right;
 		font-size: 2rem;
 		margin-top: -.25rem;
-		color: $grey2;
+		color: gainsboro;
 	}
 	
 	&__item {
@@ -147,7 +138,7 @@ body.js-side-cart-opened {
 		
 		&:nth-of-type(even) {
 			
-			background: $grey1;
+			background: gainsboro;
 			
 		}
 		
@@ -163,8 +154,8 @@ body.js-side-cart-opened {
 	
 	&__container {
 		
-		border-left: 2px solid #efefef;
-        border-right: 2px solid #efefef;
+		border-left: 2px solid gainsboro;
+        border-right: 2px solid gainsboro;
         
 	}
 	
@@ -230,7 +221,7 @@ body.js-side-cart-opened {
 		height: 2rem;
 		box-shadow: none;
 		background: white;
-		border: 1px solid #ddd;
+		border: 1px solid gainsboro;
 		padding: 0.25rem;
 		max-width: 4rem;
 	}
