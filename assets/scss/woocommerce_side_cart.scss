@@ -96,7 +96,55 @@ body.js-side-cart-opened {
 		position: absolute;
 		top: 0.25rem;
 		right: 50%;
+<<<<<<< HEAD
 		margin-right: -0.56rem;
+=======
+		margin-right: -.69rem;
+	}
+	
+	&.jump span {
+	  animation-name: bounce;
+	  transform-origin: center bottom;
+	  animation-duration: 1s;
+	  animation-fill-mode: both;
+	}
+}
+
+.side-cart-open-link {
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+
+.side-cart {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 999999;
+	transform: translateX(100%);
+	transition: all 300ms ease;
+	
+	small {
+		font-size: 0.75rem;
+		font-weight: normal;
+	}
+	
+	.iconic {
+		text-align: center;
+		padding: 1.5rem 1.5rem;
+		border-top: 2px solid #efefef;
+		border-bottom: 2px solid #efefef;
+		a, h5 {
+			display: inline-block;
+		}
+		
+		h5 {
+			margin: 0.5rem 0;
+		}
+>>>>>>> origin/Live
 		
 		&--jump {
 			
