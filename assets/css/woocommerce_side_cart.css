@@ -63,7 +63,7 @@ body.side-cart-open {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 30;
+  z-index: 999999;
   transform: translateX(100%);
   transition: all 300ms ease; }
   .side-cart small {
