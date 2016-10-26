@@ -44,7 +44,7 @@ do_action('woocommerce_before_side_cart');
         	
             <?php if ( WC()->cart->cart_contents_count == 0 ) : ?>
             
-                <?php wc_get_template( 'cart/cart-empty.php' ); ?>
+                <?php wc_get_template( 'cart/cart-aside-empty.php',  array(), false, $woocommerce_side_cart->plugin_path() . '/templates/' ); ?>
                 
             <?php else : ?>
     		
