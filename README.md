@@ -16,6 +16,22 @@ When you open it, it looks pretty.
 
 All of the templates in the templates/ folder are overridable by including the file(s) in your theme folder.
 
+## Javascript Events
+
+There are some events you can manually trigger
+
+1. Open Side Cart
+
+```javascript
+$( 'body' ).trigger( 'side_cart_open');
+```
+
+2. Close Side Cart
+
+```javascript
+$( 'body' ).trigger( 'side_cart_close');
+```
+
 ## Coming Soon
 
 There are quite a few Actions & Filters you can hook into, we will be releasing short documentation that covers these.
