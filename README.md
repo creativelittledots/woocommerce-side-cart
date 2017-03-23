@@ -23,13 +23,13 @@ There are some events you can manually trigger
 1. Open Side Cart
 
 ```javascript
-$( 'body' ).trigger( 'side_cart_open');
+$( 'body' ).trigger( 'side_cart_open' );
 ```
 
 2. Close Side Cart
 
 ```javascript
-$( 'body' ).trigger( 'side_cart_close');
+$( 'body' ).trigger( 'side_cart_close' );
 ```
 
 ## Coming Soon
