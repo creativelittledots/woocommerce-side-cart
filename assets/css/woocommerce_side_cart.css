@@ -154,8 +154,10 @@ body.js-side-cart-opened {
   .side-cart .cart-empty, .side-cart .return-to-shop {
     text-align: center; }
   .side-cart__footer {
-    position: relative;
-    width: 99.5%; }
+    position: relative;}
+  .side-cart__footer tr td {
+		padding: 0.5rem 1rem;
+	}
   .side-cart__totals {
     background: white; }
     .side-cart__totals .button {
@@ -169,7 +171,7 @@ body.js-side-cart-opened {
   .side-cart__iconic {
     padding: .5rem 1rem; }
   .side-cart__items {
-    height: calc(100% - 14.75rem) !important;
+    height: calc(100% - 16.75rem) !important;
     width: 100%; } }
 @media only screen and (min-width: 40.063em) {
   .side-cart {
