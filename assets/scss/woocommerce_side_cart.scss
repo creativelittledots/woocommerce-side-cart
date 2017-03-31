@@ -233,7 +233,9 @@ body.js-side-cart-opened {
 	
 	&__footer {
     	position: relative;
-    	width: 99.5%;
+    	tr td {
+	    	padding: 0.5rem 1rem;
+    	}
 	}
 	
 	&__totals {
@@ -267,7 +269,7 @@ body.js-side-cart-opened {
         }
         
         &__items {
-            height: calc(100% - 14.75rem)!important;
+            height: calc(100% - 16.75rem)!important;
             width: 100%;
         }
 
