@@ -1,6 +1,6 @@
 <?php
 /*
-* Plugin Name: WooCommerce Side Cart
+* Plugin Name: WooCommerce Side Cart Toggle
 * Description: Adds a hidden side cart, with toggle-able visibility via menu link, to your theme. Super light, powerful, and relies mostly on native Woocommerce functionality.
 * Version: 1.0.0
 * Author: Creative Little Dots
