@@ -60,7 +60,7 @@ class WC_Side_Cart {
 		add_action( 'woocommerce_after_calculate_totals', array($this, 'woocommerce_side_cart_always_calculate_totals') );
 		
 		// Add to cart fragments
-		add_filter( 'add_to_cart_fragments', array($this, 'woocommerce_side_cart_fragments') );
+		add_filter( 'woocommerce_add_to_cart_fragments', array($this, 'woocommerce_side_cart_fragments') );
 		
 		// Ajax
 		add_action( 'wp_ajax_change_cart_item_quantity' , array($this, 'change_cart_item_qty') );

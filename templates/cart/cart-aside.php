@@ -24,7 +24,7 @@ do_action('woocommerce_before_side_cart');
 			
     	<div class="side-cart__iconic">
     		
-    		<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="side-cart__icon">
+    		<a href="<?php echo wc_get_cart_url(); ?>" class="side-cart__icon">
         		
         		<span class="side-cart__number">
         		
@@ -40,7 +40,7 @@ do_action('woocommerce_before_side_cart');
     		
     	</div>
     	
-    	<form action="<?php echo WC()->cart->get_cart_url(); ?>" method="post" class="js-side-cart-form side-cart__form">
+    	<form action="<?php echo wc_get_cart_url(); ?>" method="post" class="js-side-cart-form side-cart__form">
         	
             <?php if ( WC()->cart->cart_contents_count == 0 ) : ?>
             
