@@ -183,7 +183,9 @@ jQuery( document ).ready(function( $ ) {
 	
 	$( 'body' ).bind( 'added_to_cart', function(e, fragments, cart_hash, button) {
 		
-		$('.js-side-cart-number').addClass('side-cart__number--jump');
+		setTimeout(function() {
+			$('.js-side-cart-number').addClass('side-cart__number--jump');
+		}, 1);
 		
 		setTimeout(function() {
 			
