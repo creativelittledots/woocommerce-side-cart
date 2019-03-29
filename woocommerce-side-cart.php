@@ -126,7 +126,7 @@ class WC_Side_Cart {
 		
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		
-		$dependencies = array( 'jquery' );
+		$dependencies = array( 'jquery', 'jquery-blockui' );
 
 		if ( class_exists( 'WC_Bundles' ) )
 			$dependencies[] = 'wc-add-to-cart-bundle';
