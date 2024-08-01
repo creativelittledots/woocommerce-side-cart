@@ -233,8 +233,12 @@ body.js-side-cart-opened {
 	
 	&__footer {
     	position: relative;
-    	tr td {
-	    	padding: 0.5rem 1rem;
+    	tr {
+	    	display: table-row;
+	    	td {
+		    	padding: 0.5rem 1rem;
+		    	text-align: left;
+	    	}
     	}
 	}
 	
