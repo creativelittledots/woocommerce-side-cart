@@ -155,8 +155,12 @@ body.js-side-cart-opened {
     text-align: center; }
   .side-cart__footer {
     position: relative;}
+   .side-cart__footer tr {
+    display: table-row;
+}
   .side-cart__footer tr td {
 		padding: 0.5rem 1rem;
+		text-align: left;
 	}
   .side-cart__totals {
     background: white; }
